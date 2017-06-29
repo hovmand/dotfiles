@@ -1,0 +1,127 @@
+runtime! archlinux.vim
+
+execute pathogen#infect()
+
+" Detect file types
+filetype plugin indent on
+
+" Show syntax
+syntax on
+
+" Autoindent
+set ai
+
+" Tab width
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0
+
+" Expand tab to spaces
+set noexpandtab
+
+" Color column
+set cc=80
+
+" Scroll offset in top/bottom
+set scrolloff=3
+
+" Instant search
+set incsearch
+
+" Highlight search
+set hlsearch
+
+" Toggle paste on CTRL+F11
+set pastetoggle=<F11>
+
+" Show title
+set title
+
+" Theme
+set background=dark
+colorscheme solarized
+
+" Select after indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" Remove bad habits with arrows
+map <up> <nop>
+map <right> <nop>
+map <down> <nop>
+map <left> <nop>
+imap <up> <nop>
+imap <right> <nop>
+imap <down> <nop>
+imap <left> <nop>
+
+" Switch between tabs with (Shift) Tab
+map <tab> :tabnext<Enter>
+map <S-tab> :tabprevious<Enter>
+
+" Line numbers
+function! NumberToggle()
+   let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]
+
+   if has("GitGutterDisable")
+	   if &nu || &rnu 
+		   :GitGutterEnable
+		else
+		   :GitGutterDisable
+		endif
+	endif
+endfunc
+
+nnoremap <silent> <C-m> :call NumberToggle()<cr>
+set relativenumber
+set number
+
+" Show the status bar
+set laststatus=2
+
+" Remap leader
+let mapleader = "-"
+
+"""""""
+"" Plugin specifics
+""
+
+" NERDTreeTabs
+" Leader-n will toggle the tree
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#use_vcscommand = 1
+
+
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
+
+
+" EasyMotion
+"
+" Case insensitive
+let g:EasyMotion_smartcase = 1
+
+"
+" Ctrlp
+"
+" Ignore
+let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn)|bower_components|node_modules|tmp|temp|vendor)$'
+
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
