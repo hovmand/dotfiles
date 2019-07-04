@@ -3,7 +3,9 @@ runtime! archlinux.vim
 execute pathogen#infect()
 
 " Detect file types
-filetype plugin indent on
+filetype plugin on
+" Alternative: use the following to also enable language-dependent indenting.
+"filetype plugin indent on
 
 " Show syntax
 syntax on
