@@ -6,6 +6,8 @@ execute pathogen#infect()
 filetype plugin on
 " Alternative: use the following to also enable language-dependent indenting.
 "filetype plugin indent on
+autocmd FileType tex :setlocal spell
+autocmd FileType gitcommit :setlocal spell
 
 " Show syntax
 syntax on
