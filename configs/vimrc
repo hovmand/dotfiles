@@ -42,8 +42,9 @@ set pastetoggle=<F11>
 set title
 
 " Theme
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
+colorscheme apprentice
 
 " Select after indenting
 vnoremap < <gv
