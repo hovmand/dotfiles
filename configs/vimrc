@@ -24,7 +24,7 @@ set softtabstop=0
 set expandtab
 
 " Color column
-set cc=80
+set cc=81
 
 " Scroll offset in top/bottom
 set scrolloff=3
