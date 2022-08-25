@@ -25,6 +25,7 @@ set expandtab
 
 " Color column
 set cc=81
+autocmd FileType gitcommit set cc=73
 
 " Scroll offset in top/bottom
 set scrolloff=3
