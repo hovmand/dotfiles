@@ -1,7 +1,7 @@
 # dotfiles
 
 ```
-ln -s ${PWD}/config/vimrc ~/.vimrc
+ln -s ${PWD}/configs/vimrc ~/.vimrc
 ln -s ${PWD}/configs/awesome/rc.lua ~/.config/awesome/rc.lua
 ln -s ${PWD}/configs/awesome/theme.lua ~/.config/awesome/theme.lua
 ln -s ${PWD}/configs/waybar/style.css ~/.config/waybar/style.css
