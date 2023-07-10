@@ -1,7 +1,5 @@
 runtime! archlinux.vim
 
-execute pathogen#infect()
-
 " Detect file types
 filetype plugin on
 " Alternative: use the following to also enable language-dependent indenting.
